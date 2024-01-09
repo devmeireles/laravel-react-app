@@ -1,0 +1,285 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Hotels API",
+        "description": "A powerful API provinding data for hotel applications",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/hotels": {
+            "get": {
+                "tags": [
+                    "hotels"
+                ],
+                "summary": "Display a listing of hotel.",
+                "description": "List of hotels",
+                "operationId": "1f059609a9a7cdebad01e8494549cc8d",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Hotel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "hotels"
+                ],
+                "summary": "Store a newly created hotel in storage.",
+                "description": "Place a hotel",
+                "operationId": "c8f412836761802038a38f7c95ad6c9e",
+                "requestBody": {
+                    "description": "Hotel data",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "Hotel name",
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "description": "Image URL",
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "description": "Hotel city",
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "description": "Hotel address",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "Hotel description",
+                                        "type": "string"
+                                    },
+                                    "stars": {
+                                        "description": "Hotel stars",
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "Display the specified hotel"
+                    }
+                }
+            }
+        },
+        "/api/hotels/{id}": {
+            "get": {
+                "tags": [
+                    "hotels"
+                ],
+                "summary": "Display the specified hotel.",
+                "description": "List of hotels",
+                "operationId": "32fa458e73403c0f53352a6162667196",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "explode": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Display the specified hotel"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    },
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Hotel"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "hotels"
+                ],
+                "summary": "Remove the specified hotel from storage.",
+                "description": "Delete a hotel",
+                "operationId": "d7cc9d4ced4fee467530e2b4017bc6c6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "explode": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "hotels"
+                ],
+                "summary": "Update the specified hotel in storage.",
+                "description": "Update a hotel",
+                "operationId": "83d26c629ece359c11526848be23bc17",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "explode": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Hotel data",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "Hotel name",
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "description": "Image URL",
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "description": "Hotel city",
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "description": "Hotel address",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "Hotel description",
+                                        "type": "string"
+                                    },
+                                    "stars": {
+                                        "description": "Hotel stars",
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "Display the updated hotel"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Hotel": {
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "title": "name",
+                        "description": "name",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "image": {
+                        "title": "image",
+                        "description": "image",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "city": {
+                        "title": "city",
+                        "description": "city",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "address": {
+                        "title": "address",
+                        "description": "address",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "description": {
+                        "title": "description",
+                        "description": "description",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "stars": {
+                        "title": "stars",
+                        "description": "stars",
+                        "type": "integer",
+                        "format": "int"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "hotels",
+            "description": "Access to hotels endpoints"
+        }
+    ]
+}

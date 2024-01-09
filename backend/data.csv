@@ -1,0 +1,11 @@
+name,description,image,price,active
+Grand Hotel Plaza,Luxurious 5-star hotel in the heart of the city,grand_plaza.jpg,300.00,true
+Seaside Resort & Spa,Relaxing beachfront resort with spa facilities,seaside_resort.jpg,250.50,true
+Mountain Lodge Retreat,Cozy lodge nestled in the mountains with scenic views,mountain_lodge.jpg,180.00,true
+Urban Boutique Hotel,Chic boutique hotel in the trendy urban district,urban_boutique.jpg,200.75,true
+The Historic Inn,Quaint historic inn with a touch of old-world charm,historic_inn.jpg,120.50,true
+Riverside Lodge,Rustic lodge situated by the river with outdoor activities,riverside_lodge.jpg,160.25,true
+Tranquil Oasis Resort,Exclusive resort offering a peaceful oasis experience,oasis_resort.jpg,280.00,true
+City Lights Hotel,Modern hotel with stunning city skyline views,city_lights_hotel.jpg,220.50,true
+Ski Chalet Retreat,Perfect getaway for skiing enthusiasts with alpine ambiance,ski_chalet.jpg,190.75,true
+Desert Mirage Hotel,Luxury hotel in the desert oasis with spa and golf,desert_mirage.jpg,320.00,true
